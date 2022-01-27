@@ -10,6 +10,13 @@ use Illuminate\Support\Str;
 class BlogController extends Controller
 {
     public function index(){
+//        $aa= Article::all();
+//        foreach ($aa as $a){
+//            $a->slug = Str::slug($a->title)."_".uniqid();
+//            $a->cat_slug = Str::slug($a->category->title)."_".uniqid();
+//            $a->update();
+//        }
+
 //                $aa= Category::all();
 //        foreach ($aa as $a){
 //            $a->slug = Str::slug($a->title)."_".uniqid();

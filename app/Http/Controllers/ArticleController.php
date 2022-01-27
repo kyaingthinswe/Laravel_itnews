@@ -50,7 +50,6 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-//        return $request;
         $request->validate([
             'category'=>'required|exists:categories,id',
             'title'=> 'required|max:100',
@@ -58,10 +57,9 @@ class ArticleController extends Controller
         ]);
 
         $article = new Article();
-//        $cat = new Category();
+
         $article->title = $request->title;
         $article->slug = Str::slug($request->title)."_".uniqid();
-//        $article->cat_slug = Str::slug($article->category()->title)."_".uniqid();
         $article->description = $request->description;
         $article->category_id = $request->category;
         $article->user_id = Auth::id();
@@ -112,7 +110,7 @@ class ArticleController extends Controller
 //        $cat = new Category();
         $article->title = $request->title;
         $article->slug = Str::slug($request->title)."_".uniqid();
-//        $article->cat_slug = Str::slug($article->category()->title)."_".uniqid();
+//        $article->cat_slug = Str::slug($article->category->title)."_".uniqid();
         $article->description = $request->description;
         $article->category_id = $request->category;
         $article->update();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColunmToArticles extends Migration
+class AddColumnToArticles extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,7 @@ class AddColunmToArticles extends Migration
     {
         Schema::table('articles', function (Blueprint $table) {
             $table->text('slug')->unique()->nullable()->after('title');
+//            $table->string('cat_slug');
         });
     }
 
@@ -26,7 +27,7 @@ class AddColunmToArticles extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            //
+            $table->text('slug')->unique()->nullable()->after('title');
         });
     }
 }
