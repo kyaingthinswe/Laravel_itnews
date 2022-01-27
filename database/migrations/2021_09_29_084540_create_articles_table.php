@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->text('title');
             $table->longText('description');
-            $table->bigInteger('category_id');
+            $table->string('cat_slug');
             $table->bigInteger('user_id');
             $table->timestamps();
         });

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'BlogController@index')->name('index');
 Route::get('/detail/{slug}','BlogController@detail')->name('detail');
-Route::get('/category/{id}','BlogController@baseOnCategory')->name('baseOnCategory');
+Route::get('/category/{cat_slug}','BlogController@baseOnCategory')->name('baseOnCategory');
 Route::get('/user/{id}','BlogController@baseOnUser')->name('baseOnUser');
 Route::get('/date/{date}','BlogController@baseOnDate')->name('baseOnDate');
 Route::view('/about','blog.about')->name('about');

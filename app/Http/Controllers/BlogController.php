@@ -10,6 +10,13 @@ use Illuminate\Support\Str;
 class BlogController extends Controller
 {
     public function index(){
+//        $aa= Article::all();
+//        foreach ($aa as $a){
+//            $a->slug = Str::slug($a->title)."_".uniqid();
+//            $a->cat_slug = Str::slug($a->category->title)."_".uniqid();
+//            $a->update();
+//        }
+
 //                $aa= Category::all();
 //        foreach ($aa as $a){
 //            $a->slug = Str::slug($a->title)."_".uniqid();
@@ -32,12 +39,12 @@ class BlogController extends Controller
        return view('blog.detail',compact('article'));
     }
 
-    public function baseOnCategory($id){
+    public function baseOnCategory($cat_slug){
 //        return $slug;
         $articles = Article::when(isset(request()->search),function ($q){
             $s = request()->search;
             return $q->orwhere('title','like',"%$s%")->orwhere('description','like',"%$s%");
-        })->where('category_id',$id)->with(['user','category'])->latest('id')->paginate(7);
+        })->where('cat_slug',$cat_slug)->with(['user','category'])->latest('id')->paginate(7);
 //        return $articles;
         return view('welcome',compact('articles'));
     }

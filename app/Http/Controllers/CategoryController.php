@@ -44,7 +44,7 @@ class CategoryController extends Controller
         ]);
         $category = new Category();
         $category->title = $request->title;
-//        $category->slug = \Illuminate\Support\Str::slug($request->title);
+        $category->cat_slug = \Illuminate\Support\Str::slug($request->title);
         $category->user_id = Auth::id();
         $category->save();
 
@@ -91,7 +91,8 @@ class CategoryController extends Controller
         ]);
 
         $category->title = $request->title;
-//        $category->slug = \Illuminate\Support\Str::slug($request->title);
+        $category->cat_slug = \Illuminate\Support\Str::slug($request->title);
+
 //        $category->user_id = Auth::id();
         $category->update();
 
