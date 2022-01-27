@@ -10,6 +10,6 @@ $factory->define(Article::class, function (Faker $faker) {
         'title'=>$faker->text(50),
         'description'=>$faker->text(1000),
         'user_id'=> \App\User::all()->random()->id,
-        'category_id'=>\App\Category::all()->random()->id,
+        'cat_slug'=>\App\Category::all()->random()->cat_slug,
     ];
 });

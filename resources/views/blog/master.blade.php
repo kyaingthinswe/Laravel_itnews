@@ -76,7 +76,7 @@
                         <ul class="list-group">
                             @foreach($categories as $c)
                             <li class="list-group-item ">
-                                <a href="{{route('baseOnCategory',$c->id)}}" class="{{request()->url() == route('baseOnCategory',$c->id) ?'active':''}}">{{$c->title}}</a>
+                                <a href="{{route('baseOnCategory',$c->cat_slug)}}" class="{{request()->url() == route('baseOnCategory',$c->cat_slug) ?'active':''}}">{{$c->title}}</a>
                             </li>
                             @endforeach
                         </ul>

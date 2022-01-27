@@ -43,6 +43,7 @@
                             @enderror
                         </form>
                     </div>
+
                     <table class="table table-bordered table-hover mt-3">
                         <thead>
                         <tr>
@@ -69,7 +70,7 @@
                                 </td>
                                 {{--                            <td>{{\Illuminate\Support\Facades\Auth::user()->name}}</td>--}}
                                 <td>{{$a->user->name}}</td>
-                                <td class="text-nowrap">{{$a->category->title}}</td>
+                                <td class="text-nowrap">{{$a->cat_slug}}</td>
                                 <td class="text-nowrap">
                                     <a href="{{route('article.show',$a->id)}}" class="btn btn-sm btn-outline-success">Detail</a>
 
